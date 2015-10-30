@@ -1,16 +1,15 @@
 angular
-	.module
-	.controller('ChatsCtrl', ChatsCtrl);
+  .module('WhatsGood')
+  .controller('ChatsCtrl', ChatsCtrl);
 
 function ChatsCtrl ($scope) {
-
-	$scope.chats = [
+  $scope.chats = [
     {
       _id: 0,
       name: 'Filip Kuzmanovski',
       picture: 'https://randomuser.me/api/portraits/thumb/men/1.jpg',
       lastMessage: {
-        text: 'Where you at?',
+        text: 'Where You At?',
         timestamp: moment().subtract(1, 'hours').toDate()
       }
     },
@@ -43,10 +42,10 @@ function ChatsCtrl ($scope) {
     },
     {
       _id: 4,
-      name: 'Ray Edwards',
+      name: 'Jake Diaz',
       picture: 'https://randomuser.me/api/portraits/thumb/men/2.jpg',
       lastMessage: {
-        text: 'This is wicked good ice cream.',
+        text: 'Trolling Tahoe.',
         timestamp: moment().subtract(2, 'weeks').toDate()
       }
     }
