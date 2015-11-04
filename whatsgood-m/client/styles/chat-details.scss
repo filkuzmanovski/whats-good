@@ -61,7 +61,7 @@
 		background-image: url(/message-other.png)
 	}
 
-	&.message-mine:: {
+	&.message-mine::before {
 		right: -11px;
 		background-image: url(/message-mine.png)
 	}
