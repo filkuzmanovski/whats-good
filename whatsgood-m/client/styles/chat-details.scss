@@ -46,15 +46,15 @@
 	}
 
 	&.message-other::before, &.message-mine::before, {
-		content: "";
-		position: absolute;
-		bottom: 3px;
-		width: 12px;
-		height: 19px;
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-size: contain;
-	}
+	    content: "";
+	    position: absolute;
+	    bottom: 3px;
+	    width: 12px;
+	    height: 19px;
+	    background-position: 50% 50%;
+	    background-repeat: no-repeat;
+	    background-size: contain;
+  }
 
 	&.message-other::before {
 		left: -11px;
