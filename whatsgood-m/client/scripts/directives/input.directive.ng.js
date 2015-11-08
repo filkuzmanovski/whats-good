@@ -1,7 +1,7 @@
 angular
   .module('WhatsGood')
   .directive('input', input);
- 
+
 // The directive enable sending message when tapping return
 // and expose the focus and blur events to adjust the view
 // when the keyboard opens and closes
@@ -17,9 +17,9 @@ function input ($timeout) {
     link: link
   };
   return directive;
- 
+
   ////////////
- 
+
   function link (scope, element, attrs) {
     element.bind('focus', function (e) {
       if (scope.onFocus) {
@@ -28,7 +28,7 @@ function input ($timeout) {
         });
       }
     });
- 
+
     element.bind('blur', function (e) {
       if (scope.onBlur) {
         $timeout(function () {
@@ -36,13 +36,13 @@ function input ($timeout) {
         });
       }
     });
- 
+
     element.bind('keydown', function (e) {
       if (e.which == 13) {
         if (scope.returnClose) {
           element[0].blur();
         }
- 
+
         if (scope.onReturn) {
           $timeout(function () {
             scope.onReturn();
