@@ -42,7 +42,7 @@ Meteor.methods({
     var otherUser = Meteor.users.findOne(otherId);
     if (! otherUser) {
       throw new Meteor.Error('user-not-exists',
-        'Chat\'s user not exists');
+        'Chat\'s user  do not exist');
     }
 
     var chat = {
@@ -54,4 +54,22 @@ Meteor.methods({
 
     return chatId;
   },
+  removeChat: function (chatId) {
+    if (! this.userId) {
+      throw new Meteor.Error('not-logged-in',
+        'Must be logged in to create a chat');
+    }
+
+    check(chatId, String);
+
+    var chat = Chats.findOne(chatId);
+    if (! chat || ! _.include(chat.userIds, this.userId)) {
+      throw new Meteor.Error('chat-not-exists',
+        'Chat do not exist');
+    }
+
+    Messages.remove({ chatId: chatId });
+
+    return Chats.remove({ _id: chatId });
+  }
 });
